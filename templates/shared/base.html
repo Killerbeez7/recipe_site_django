@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eat & Amare</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static '/css/styles.css' %}">
+</head>
+<body>
+{% block nav %}
+    {% include "shared/partials/nav.html" %}
+{% endblock %}
+
+{% include "tags/profile_complete_notification.html" %}
+
+{% block scipts_body_start %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block scripts_body_end %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'shared/partials/footer.html' %}
+{% endblock %}
+</body>
+</html>
