@@ -1,0 +1,40 @@
+{% extends 'shared/base.html' %}
+
+{% block nav %}
+    <div class="nav-wrapper">
+        <div class="left-side">
+            <div class="nav-link-wrapper">
+                <a href="{% url "index" %}">Home</a>
+            </div>
+
+            <div class="nav-link-wrapper">
+                <a href="">Recipes</a>
+            </div>
+
+            <div class="nav-link-wrapper">
+                <a href="">About</a>
+            </div>
+
+            <div class="nav-link-wrapper">
+                <a href="">Contacts</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="nav-link-wrapper">
+                <a href="{% url 'sign-in' %}">Sign in</a>
+            </div>
+            <div class="nav-link-wrapper">
+                <a href="{% url 'index' %}">Go back!</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <form action="{% url 'sign-up' %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button>Sign up</button>
+    </form>
+{% endblock %}
