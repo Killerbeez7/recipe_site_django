@@ -29,6 +29,7 @@ INSTALLED_APPS = [
 
     'recipe_site_django.recipe_app',
     'recipe_site_django.common',
+    'recipe_site_django.recipe_site_auth',
 ]
 
 MIDDLEWARE = [
