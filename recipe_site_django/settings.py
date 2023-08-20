@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'recipe_site_django.recipe_app',
     'recipe_site_django.common',
     'recipe_site_django.recipe_site_auth',
+    'recipe_site_django.profiles',
 ]
 
 MIDDLEWARE = [
@@ -119,3 +120,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+AUTH_USER_MODEL = 'recipe_site_auth.RecipeSiteUser'

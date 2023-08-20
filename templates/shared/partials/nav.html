@@ -23,14 +23,14 @@
 {#                <a href="{% url 'profile-details' %}">{{ request.user }}</a>#}
             </div>
             <div class="nav-link-wrapper">
-{#                <a href="{% url 'sign-out' %}">Sign out</a>#}
+                <a href="{% url 'sign-out' %}">Sign out</a>
             </div>
         {% else %}
             <div class="nav-link-wrapper">
-{#                <a href="{% url 'sign-in' %}">Sign in</a>#}
+                <a href="{% url 'sign-in' %}">Sign in</a>
             </div>
             <div class="nav-link-wrapper">
-{#                <a href="{% url 'sign-up' %}">Sign up</a>#}
+                <a href="{% url 'sign-up' %}">Sign up</a>
             </div>
         {% endif %}
     </div>
