@@ -1,0 +1,10 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+    <h1>Are you sure you want to delete "{{ recipe.name }}" recipe? </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="submit" value="Confirm" class="btn btn-danger">
+        <a class='btn btn-primary' href="javascript:history.back()">No, go back</a>
+    </form>
+{% endblock %}

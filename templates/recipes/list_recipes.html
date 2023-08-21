@@ -1,0 +1,30 @@
+{% extends "shared/base.html" %}
+
+{% block content %}
+    <form style="margin-left: 3%;" action="{% url 'add-recipe' %}">
+        <a href="{% url 'add-recipe' %}" class="add-btn">Add recipe</a>
+    </form>
+    <ul class="recipe-list-wrapper">
+        {% for recipe in recipes %}
+
+            <h3 style="font-style: italic; margin-bottom: 10px">Time to cook: {{ recipe.preparation_time }} minutes</h3>
+
+            <li class="recipe-list-item-wrapper">
+                <div class="recipe-image-wrapper">
+                    <img class="recipe-img" src="{{ recipe.image.url }}" alt="{{ recipe.description }}">
+                </div>
+                <div class="recipe-content-wrapper">
+                    <div class="recipe-name-wrapper">
+                        <h3>{{ recipe.name }}</h3>
+                    </div>
+                    <div class="recipe-description-wrapper">
+                        <h3>{{ recipe.description }}</h3>
+                    </div>
+                </div>
+            </li>
+
+            <a class="view-recipe-btn" href="{% url 'recipe-details' recipe.id %}">view</a>
+
+        {% endfor %}
+    </ul>
+{% endblock %}

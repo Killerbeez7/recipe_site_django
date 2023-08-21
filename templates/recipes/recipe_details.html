@@ -1,0 +1,54 @@
+{% extends "shared/base.html" %}
+
+
+{% block content %}
+    <h1>Recipe: {{ recipe.name }}</h1>
+
+    <hr>
+    <br>
+
+    <div class="recipe-details-wrapper" style="display: flex; ">
+        <div class="recipe-img-box">
+            <img class="recipe-img" style="width: 250px;height: 250px;display: inline-block"
+                 src="{{ recipe.image.url }}"
+                 alt="{{ recipe.description }}">
+        </div>
+        <div class="recipe-details-box">
+            <h3>Description: {{ recipe.description }}</h3>
+            <h3>Time for preparation: {{ recipe.preparation_time }} minutes</h3>
+            <h2>Likes: {{ recipe.like_set.count }}</h2>
+        </div>
+
+        <div class="like-btn btn">
+            <button><a href="{% url 'like-recipe' recipe.id %}">LIKE</a></button>
+        </div>
+    </div>
+
+    <div class="form-control">
+        <a class="view-recipe-btn" href="{% url 'edit-recipe' recipe.id %}">Edit</a>
+        <a class="view-recipe-btn" href="{% url 'delete-recipe' recipe.id %}">Delete</a>
+    </div>
+
+
+    {% if comments %}
+        {% for comment in comments %}
+            <div class="box">
+                <h3><em>{{ comment.text }}</em></h3>
+                <hr>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="box>">
+            <h3>There are no comments for this recipe.</h3>
+        </div>
+    {% endif %}
+    <div class="box">
+        <form method="post" action="{% url 'comment-recipe' recipe.id %}">
+            {% csrf_token %}
+            {{ comment_form }}
+            <button class="btn btn-primary" type="submit">Add comment</button>
+        </form>
+    </div>
+
+
+{% endblock %}

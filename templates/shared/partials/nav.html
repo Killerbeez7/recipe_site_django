@@ -5,7 +5,7 @@
         </div>
 
         <div class="nav-link-wrapper">
-{#            <a href="{% url 'list-recipes' %}">Recipes</a>#}
+            <a href="{% url 'list-recipes' %}">Recipes</a>
         </div>
 
         <div class="nav-link-wrapper">
@@ -20,7 +20,7 @@
     <div class="right-side">
         {% if user.is_authenticated %}
             <div class="nav-link-wrapper">
-{#                <a href="{% url 'profile-details' %}">{{ request.user }}</a>#}
+{#                    <a href="{% url 'profile-details' %}">{{ request.user }}</a>#}
             </div>
             <div class="nav-link-wrapper">
                 <a href="{% url 'sign-out' %}">Sign out</a>
